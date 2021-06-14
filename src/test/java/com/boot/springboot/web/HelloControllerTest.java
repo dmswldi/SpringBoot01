@@ -36,7 +36,7 @@ public class HelloControllerTest {
                 .param("name", name)// 값 String만 허용
                 .param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath(" ", is(name)))
+                .andExpect(jsonPath("$.name", is(name)))
                 .andExpect(jsonPath("$.amount", is(amount)));
     }
 }
