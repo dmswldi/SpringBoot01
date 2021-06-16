@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 //@ExtendWith(SpringExtension.class)// JUnit 5
 @WebMvcTest(controllers = HelloController.class)// HelloController.class
-public class HelloControllerTest {
+public class HelloControllerTest {// 단위 테스트 !
 
     @Autowired
     private MockMvc mvc;// web api test
