@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 //@ExtendWith(SpringExtension.class)// JUnit 5
-@WebMvcTest(controllers = HelloController.class)// HelloController.class
+@WebMvcTest(controllers = HelloController.class)// HelloController.class / JPA 기능 작동 X
 public class HelloControllerTest {// 단위 테스트 !
 
     @Autowired

@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Getter// NO SETTER in Entity Class !!!!! -> 값 변경 필요 시 목적과 의도를 나타내는 메소드 추가!
 @NoArgsConstructor// Lombok annotation
 @Entity// 테이블과 링크될 클래스 표시, JPA annotation(주요 어노테이션을 클래스에 가깝게 위치 -> 언어 전환 시 쉽게 삭제)
-public class Posts {// -> posts table, 테이블 설계 = 여기서 Entity 설계
+public class Posts extends BaseTimeEntity {// -> posts table, 테이블 설계 = 여기서 Entity 설계
 
     @Id// PK 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY)// PK 생성규칙, auto_increment
@@ -33,5 +33,11 @@ public class Posts {// -> posts table, 테이블 설계 = 여기서 Entity 설�
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    // update에서 DB에 쿼리 날리지 X -> JPA의 영속성 컨텍스트 때문에
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }
